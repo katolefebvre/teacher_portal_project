@@ -6,6 +6,23 @@
 <head runat="server">
     <title>Create a Student</title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 145px;
+        }
+
+        .auto-style2 {
+            margin-left: 0px;
+        }
+
+        .auto-style3 {
+            width: 294px;
+        }
+
+        .auto-style4 {
+            margin-left: 40px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,32 +49,30 @@
         <div>
             <h1>Students - New Student</h1>
         </div>
-        <div>
+        <div class="auto-style4">
             <table>
                 <tr>
-                    <th>Student Name:</th>
-                    <td>
-                        <asp:TextBox ID="txtStudentName" runat="server"></asp:TextBox>
+                    <th class="auto-style1">Student Name:</th>
+                    <td class="auto-style3">
+                        <asp:TextBox ID="txtStudentName" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <th>GPA:</th>
-                    <td>
-                        <asp:TextBox ID="txtGPA" runat="server"></asp:TextBox>
+                    <th class="auto-style1">GPA:</th>
+                    <td class="auto-style3">
+                        <asp:TextBox ID="txtGPA" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <th>Course:</th>
-                    <td>
-                        <asp:DropDownList ID="ddlCourses" runat="server" DataSourceID="Courses" DataTextField="Name" DataValueField="Name">
+                    <th class="auto-style1">Course:</th>
+                    <td class="auto-style3">
+                        <asp:DropDownList ID="ddlCourses" runat="server" CssClass="auto-style2" DataSourceID="Courses" DataTextField="Name" DataValueField="Id" Width="270px">
                         </asp:DropDownList>
-                        <asp:EntityDataSource ID="CourseEntity" runat="server">
-                        </asp:EntityDataSource>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Student" />
-            <asp:SqlDataSource ID="Courses" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT [Name] FROM [Course]"></asp:SqlDataSource>
+            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Student" Height="39px" Width="256px" />
+            <asp:SqlDataSource ID="Courses" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
         </div>
     </form>
 </body>

@@ -39,8 +39,9 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="StudentsDataSource" ForeColor="#333333" GridLines="None" Width="441px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                    <asp:BoundField DataField="FullName" HeaderText="Full Name" SortExpression="FullName" />
+                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
+                    <asp:BoundField DataField="FullName" HeaderText="FullName" SortExpression="FullName" />
+                    <asp:BoundField DataField="Course" HeaderText="Course" SortExpression="Course" />
                     <asp:BoundField DataField="GPA" HeaderText="GPA" SortExpression="GPA" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
@@ -54,7 +55,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="StudentsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Student]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="StudentsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT Student.Id, Student.FullName, Course.Name AS Course, Student.GPA FROM Student INNER JOIN Course ON Student.CourseID = Course.Id"></asp:SqlDataSource>
         </div>
     </form>
 </body>
