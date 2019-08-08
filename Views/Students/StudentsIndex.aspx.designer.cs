@@ -31,6 +31,24 @@ namespace TeacherPortalProject.Views.Students {
         protected global::System.Web.UI.WebControls.Button btnStudentCreate;
         
         /// <summary>
+        /// gridStudent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridStudent;
+        
+        /// <summary>
+        /// StudentsDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource StudentsDataSource;
+        
+        /// <summary>
         /// outID control.
         /// </summary>
         /// <remarks>
@@ -65,23 +83,5 @@ namespace TeacherPortalProject.Views.Students {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label outCourseName;
-        
-        /// <summary>
-        /// gridStudent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridStudent;
-        
-        /// <summary>
-        /// StudentsDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource StudentsDataSource;
     }
 }
