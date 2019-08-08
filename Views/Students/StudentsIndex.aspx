@@ -6,6 +6,18 @@
 <head runat="server">
     <title>Students</title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 40px;
+            margin-bottom: 5px;
+        }
+
+        .auto-style2 {
+            margin-left: 40px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,19 +42,21 @@
             </div>
         </div>
         <div>
-            <h1>Students - Home</h1>
+            <h1 class="auto-style1">Students - Home</h1>
         </div>
         <div>
-            <asp:Button ID="btnStudentCreate" runat="server" OnClick="btnStudentCreate_Click" Text="Create New Student" />
+            <asp:Button ID="btnStudentCreate" runat="server" OnClick="btnStudentCreate_Click" Text="Create New Student" CssClass="auto-style1" />
         </div>
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="StudentsDataSource" ForeColor="#333333" GridLines="None" Width="441px">
+            <asp:GridView ID="gridStudent" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="StudentsDataSource" ForeColor="#333333" GridLines="None"
+                Width="80%" CssClass="auto-style2" Font-Size="16px" AllowSorting="True">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
-                    <asp:BoundField DataField="FullName" HeaderText="FullName" SortExpression="FullName" />
-                    <asp:BoundField DataField="Course" HeaderText="Course" SortExpression="Course" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:BoundField DataField="Id" HeaderText="Student ID" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
+                    <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
                     <asp:BoundField DataField="GPA" HeaderText="GPA" SortExpression="GPA" />
+                    <asp:BoundField DataField="CourseID" HeaderText="Course Number" SortExpression="CourseID" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
@@ -55,7 +69,26 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="StudentsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT Student.Id, Student.FullName, Course.Name AS Course, Student.GPA FROM Student INNER JOIN Course ON Student.CourseID = Course.Id"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="StudentsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>"
+                SelectCommand="SELECT * FROM [Student]"
+                DeleteCommand="DELETE FROM [Student] WHERE [Id] = @Id"
+                InsertCommand="INSERT INTO [Student] ([FullName], [GPA], [CourseID]) VALUES (@FullName, @GPA, @CourseID)"
+                UpdateCommand="UPDATE [Student] SET [FullName] = @FullName, [GPA] = @GPA, [CourseID] = @CourseID WHERE [Id] = @Id">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="FullName" Type="String" />
+                    <asp:Parameter Name="GPA" Type="Decimal" />
+                    <asp:Parameter Name="CourseID" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="FullName" Type="String" />
+                    <asp:Parameter Name="GPA" Type="Decimal" />
+                    <asp:Parameter Name="CourseID" Type="Int32" />
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
     </form>
 </body>

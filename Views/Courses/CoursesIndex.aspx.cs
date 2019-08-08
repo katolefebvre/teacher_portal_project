@@ -13,5 +13,15 @@ namespace TeacherPortalProject.Views.Courses
         {
 
         }
+
+        protected void btnCourseCreate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Courses/CoursesCreate");
+        }
+
+        protected void gridCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

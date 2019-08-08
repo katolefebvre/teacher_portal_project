@@ -6,6 +6,19 @@
 <head runat="server">
     <title>Courses</title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 40px;
+            margin-bottom: 5px;
+        }
+
+        .auto-style2 {
+            margin-left: 40px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+            margin-right: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,28 +43,41 @@
             </div>
         </div>
         <div>
-            <h1>Courses - Home</h1>
+            <h1 class="auto-style1">Courses - Home</h1>
         </div>
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="CoursesDataSource" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:Button ID="btnCourseCreate" runat="server" OnClick="btnCourseCreate_Click" Text="Create New Course" CssClass="auto-style1" />
+        </div>
+        <div>
+            <asp:GridView ID="gridCourses" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="CoursesDataSource" GridLines="Horizontal" Width="80%" CssClass="auto-style2" OnSelectedIndexChanged="gridCourses_SelectedIndexChanged" AllowSorting="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px">
                 <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:ButtonField CommandName="Select" HeaderText="List of Students" ShowHeader="True" Text="Students" />
                 </Columns>
-                <EditRowStyle BackColor="#7C6F57" />
-                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
-                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#E3EAEB" />
-                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                <SortedAscendingHeaderStyle BackColor="#246B61" />
-                <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                <SortedDescendingHeaderStyle BackColor="#15524A" />
+                <FooterStyle BackColor="White" ForeColor="#333333" />
+                <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="White" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#487575" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#275353" />
             </asp:GridView>
-            <asp:SqlDataSource ID="CoursesDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="CoursesDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]" DeleteCommand="DELETE FROM [Course] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Course] ([Name]) VALUES (@Name)" UpdateCommand="UPDATE [Course] SET [Name] = @Name WHERE [Id] = @Id">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Name" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Name" Type="String" />
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
     </form>
 </body>

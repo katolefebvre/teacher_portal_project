@@ -31,13 +31,13 @@ namespace TeacherPortalProject.Views.Students {
         protected global::System.Web.UI.WebControls.Button btnStudentCreate;
         
         /// <summary>
-        /// GridView1 control.
+        /// gridStudent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gridStudent;
         
         /// <summary>
         /// StudentsDataSource control.

@@ -13,5 +13,10 @@ namespace TeacherPortalProject.Views.Assignments
         {
 
         }
+
+        protected void btnAssignmentCreate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Assignments/AssignmentsCreate.aspx");
+        }
     }
 }

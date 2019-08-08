@@ -46,5 +46,10 @@ namespace TeacherPortalProject.Views.Students
 
             Response.Redirect("~/Views/Students/StudentsIndex.aspx");
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Students/StudentsIndex.aspx");
+        }
     }
 }

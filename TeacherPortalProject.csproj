@@ -57,6 +57,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -158,7 +176,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Views\Assignments\AssignmentsCreate.aspx" />
     <Content Include="Views\Assignments\AssignmentsIndex.aspx" />
+    <Content Include="Views\Courses\CoursesCreate.aspx" />
     <Content Include="Views\Courses\CoursesIndex.aspx" />
     <Content Include="Views\Students\StudentsCreate.aspx" />
     <Content Include="Views\Students\StudentsIndex.aspx" />
@@ -197,12 +217,26 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\Assignments\AssignmentsCreate.aspx.cs">
+      <DependentUpon>AssignmentsCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Assignments\AssignmentsCreate.aspx.designer.cs">
+      <DependentUpon>AssignmentsCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Assignments\AssignmentsIndex.aspx.cs">
       <DependentUpon>AssignmentsIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Assignments\AssignmentsIndex.aspx.designer.cs">
       <DependentUpon>AssignmentsIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Courses\CoursesCreate.aspx.cs">
+      <DependentUpon>CoursesCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Courses\CoursesCreate.aspx.designer.cs">
+      <DependentUpon>CoursesCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Courses\CoursesIndex.aspx.cs">
       <DependentUpon>CoursesIndex.aspx</DependentUpon>

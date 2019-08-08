@@ -73,3 +73,15 @@ C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Projec
 C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\EntityFramework.SqlServer.dll
 C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\EntityFramework.xml
 C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\EntityFramework.SqlServer.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Helpers.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Mvc.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Razor.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Helpers.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Mvc.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.Razor.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\klefe\Documents\School\Semester 4\Web Services\Assignments\Final Project\TeacherPortalProject\bin\System.Web.WebPages.Razor.xml

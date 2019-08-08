@@ -12,7 +12,7 @@
         }
 
         .auto-style2 {
-            margin-left: 0px;
+            margin-top: 5px;
         }
 
         .auto-style3 {
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div>
-            <h1>Students - New Student</h1>
+            <h1 class="auto-style4">Students - New Student</h1>
         </div>
         <div class="auto-style4">
             <table>
@@ -66,13 +66,14 @@
                 <tr>
                     <th class="auto-style1">Course:</th>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlCourses" runat="server" CssClass="auto-style2" DataSourceID="Courses" DataTextField="Name" DataValueField="Id" Width="270px">
+                        <asp:DropDownList ID="ddlCourses" runat="server" CssClass="auto-style2" DataSourceID="Courses" DataTextField="Name" DataValueField="Id" Width="276px" Height="25px">
                         </asp:DropDownList>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Student" Height="39px" Width="256px" />
             <asp:SqlDataSource ID="Courses" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Student" Height="40px" Width="160px" CssClass="auto-style2" />
+            <asp:Button ID="btnCancel" runat="server" CssClass="auto-style2" Height="40px" Text="Cancel" Width="160px" OnClick="btnCancel_Click" />
         </div>
     </form>
 </body>
