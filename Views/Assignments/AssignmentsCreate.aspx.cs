@@ -19,6 +19,9 @@ namespace TeacherPortalProject.Views.Assignments
         protected void btnCreate_Click(object sender, EventArgs e)
         {
             Assignment assignment = new Assignment();
+            assignment.Name = txtStudentName.Text;
+            assignment.Grade = Convert.ToInt32(txtGrade.Text);
+
             String insertAssignment = "INSERT INTO Assignment (Name, Grade, CourseID, StudentID) VALUES (@Name, @Grade, " +
                 "(SELECT Id FROM Course WHERE Id = @CourseID), (SELECT Id FROM Student WHERE Id = @StudentID))";
 

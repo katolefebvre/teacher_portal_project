@@ -31,6 +31,42 @@ namespace TeacherPortalProject.Views.Students {
         protected global::System.Web.UI.WebControls.Button btnStudentCreate;
         
         /// <summary>
+        /// outID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outID;
+        
+        /// <summary>
+        /// outName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outName;
+        
+        /// <summary>
+        /// outGPA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outGPA;
+        
+        /// <summary>
+        /// outCourseName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outCourseName;
+        
+        /// <summary>
         /// gridStudent control.
         /// </summary>
         /// <remarks>

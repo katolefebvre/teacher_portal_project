@@ -70,15 +70,7 @@
                 <tr>
                     <th class="auto-style5">Grade (%):</th>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtGPA" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="auto-style1">Student:</th>
-                    <td class="auto-style3">
-                        <asp:DropDownList ID="ddlStudents" runat="server" CssClass="auto-style2" DataSourceID="Students" DataTextField="FullName" DataValueField="Id" Width="276px" Height="25px">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="Students" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT [FullName], [Id] FROM [Student]"></asp:SqlDataSource>
+                        <asp:TextBox ID="txtGrade" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -86,7 +78,15 @@
                     <td class="auto-style3">
                         <asp:DropDownList ID="ddlCourses" runat="server" CssClass="auto-style2" DataSourceID="CoursesList" DataTextField="Name" DataValueField="Id" Width="276px" Height="25px">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="CoursesList" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT Course.Name, Student.CourseID FROM Course INNER JOIN Student ON Course.Id = Student.CourseID"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="CoursesList" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Student:</th>
+                    <td>
+                        <asp:DropDownList ID="ddlStudents" runat="server" DataSourceID="StudentList" DataTextField="FullName" DataValueField="Id" Width="276px" Height="25px" CssClass="auto-style2">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="StudentList" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT [Id], [FullName], [CourseID] FROM [Student]"></asp:SqlDataSource>
                     </td>
                 </tr>
             </table>

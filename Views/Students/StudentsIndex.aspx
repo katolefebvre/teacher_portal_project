@@ -16,8 +16,37 @@
             margin-left: 40px;
             margin-bottom: 5px;
             margin-top: 0px;
+            margin-right: 0px;
+        }
+
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        td {
+            cursor: pointer;
+        }
+
+        .hover_row {
+            background-color: #A1DCF2;
         }
     </style>
+    <script type="text/javascript">
+        function onMouseOver(rowIndex) {
+            var gv = document.getElementById("gridStudent");
+            var rowElement = gv.rows[rowIndex];
+            rowElement.style.backgroundColor = "#c8e4b6";
+            rowElement.cells.style.backgroundColor = "green";
+        }
+
+        function onMouseOut(rowIndex) {
+            var gv = document.getElementById("gridStudent");
+            var rowElement = gv.rows[rowIndex];
+            rowElement.style.backgroundColor = "#fff";
+            rowElement.cells.style.backgroundColor = "#fff";
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,15 +77,22 @@
             <asp:Button ID="btnStudentCreate" runat="server" OnClick="btnStudentCreate_Click" Text="Create New Student" CssClass="auto-style1" />
         </div>
         <div>
+        <div class="auto-style1">
+            <asp:Label ID="outID" runat="server" Font-Size="16pt"></asp:Label><br />
+            <asp:Label ID="outName" runat="server" Font-Size="16pt"></asp:Label><br />
+            <asp:Label ID="outGPA" runat="server" Font-Size="16pt"></asp:Label><br />
+            <asp:Label ID="outCourseName" runat="server" Font-Size="16pt"></asp:Label>
+            <br />
+        </div>
             <asp:GridView ID="gridStudent" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="StudentsDataSource" ForeColor="#333333" GridLines="None"
-                Width="80%" CssClass="auto-style2" Font-Size="16px" AllowSorting="True">
+                Width="80%" CssClass="auto-style2" Font-Size="16px" AllowSorting="True" OnSelectedIndexChanged="gridStudent_SelectedIndexChanged" OnRowDataBound="gridStudent_onRowDataBound">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="Id" HeaderText="Student ID" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
                     <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
                     <asp:BoundField DataField="GPA" HeaderText="GPA" SortExpression="GPA" />
                     <asp:BoundField DataField="CourseID" HeaderText="Course Number" SortExpression="CourseID" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
