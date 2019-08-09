@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Students</title>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <style type="text/css">
         h1 {
-            margin-left: 5%;
+            margin-left: 40px;
         }
 
         #main {
-            margin: 0% 5% 0% 5%;
+            margin: 0px 35px 0px 35px;
             height: 100%;
             padding: 5px;
         }
@@ -35,21 +35,6 @@
             background-color: #A1DCF2;
         }
     </style>
-    <script type="text/javascript">
-        function onMouseOver(rowIndex) {
-            var gv = document.getElementById("gridStudent");
-            var rowElement = gv.rows[rowIndex];
-            rowElement.style.backgroundColor = "#c8e4b6";
-            rowElement.cells.style.backgroundColor = "green";
-        }
-
-        function onMouseOut(rowIndex) {
-            var gv = document.getElementById("gridStudent");
-            var rowElement = gv.rows[rowIndex];
-            rowElement.style.backgroundColor = "#fff";
-            rowElement.cells.style.backgroundColor = "#fff";
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -77,33 +62,77 @@
             <h1 class="auto-style1">Students - Home</h1>
         </div>
         <div>
-            <asp:Button ID="btnStudentCreate" runat="server" OnClick="btnStudentCreate_Click" Text="Create New Student" CssClass="btnStyle" Style="margin-left: 5.2%" Width="220px" Height="30px" />
+            <asp:Button
+                ID="btnStudentCreate"
+                runat="server"
+                OnClick="btnStudentCreate_Click"
+                Text="Create New Student"
+                Style="margin-left: 40px; margin-bottom: 5px;"
+                Width="220px"
+                Height="30px" />
         </div>
         <div id="main">
-            <div id="table">
+            <div id="table" style="margin-right: 10px">
                 <asp:GridView ID="gridStudent" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="StudentsDataSource"
-                    Width="100%" CssClass="auto-style2" Font-Size="16px" AllowSorting="True" OnSelectedIndexChanged="gridStudent_SelectedIndexChanged" OnRowDataBound="gridStudent_onRowDataBound" ForeColor="#333333" GridLines="None">
+                    Width="100%" CssClass="auto-style2" Font-Size="16px" AllowSorting="True" OnSelectedIndexChanged="gridStudent_SelectedIndexChanged" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="Id" HeaderText="Student ID" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
-                        <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
+                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
+                        <asp:BoundField DataField="FullName" HeaderText="FullName" SortExpression="FullName" />
                         <asp:BoundField DataField="GPA" HeaderText="GPA" SortExpression="GPA" />
-                        <asp:BoundField DataField="CourseID" HeaderText="Course Number" SortExpression="CourseID" />
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                        <asp:BoundField DataField="Name" HeaderText="Course" SortExpression="Name" />
+                        <asp:TemplateField ShowHeader="False">
+                            <EditItemTemplate>
+                                <asp:LinkButton
+                                    ID="LinkButton1"
+                                    runat="server"
+                                    CausesValidation="True"
+                                    CommandName="Update"
+                                    Text="Update"></asp:LinkButton>
+                                &nbsp;<asp:LinkButton
+                                    ID="LinkButton2"
+                                    runat="server"
+                                    CausesValidation="False"
+                                    CommandName="Cancel"
+                                    Text="Cancel"></asp:LinkButton>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:LinkButton
+                                    ID="LinkButton1"
+                                    runat="server"
+                                    CausesValidation="False"
+                                    CommandName="Edit"
+                                    Text="Edit"></asp:LinkButton>
+                                &nbsp;<asp:LinkButton
+                                    ID="LinkButton2"
+                                    runat="server"
+                                    CausesValidation="False"
+                                    CommandName="Select"
+                                    Text="Select"></asp:LinkButton>
+                                &nbsp;<asp:LinkButton
+                                    ID="LinkButton3"
+                                    runat="server"
+                                    CausesValidation="False"
+                                    CommandName="Delete"
+                                    Text="Delete"
+                                    OnClientClick="return confirm('Are you sure you want to delete this student? All assignments attached to this student will be deleted.');"></asp:LinkButton>
+                            </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Right" Width="25%" />
+                        </asp:TemplateField>
                     </Columns>
-                    <EditRowStyle BackColor="#7C6F57" />
-                    <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#E3EAEB" />
-                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                    <SortedAscendingHeaderStyle BackColor="#246B61" />
-                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="StudentsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>"
-                    SelectCommand="SELECT * FROM [Student]"
+                    SelectCommand="SELECT Student.Id, Student.FullName, Student.GPA, Course.Name FROM Student INNER JOIN Course ON Student.CourseID = Course.Id"
                     DeleteCommand="DELETE FROM [Student] WHERE [Id] = @Id"
                     InsertCommand="INSERT INTO [Student] ([FullName], [GPA], [CourseID]) VALUES (@FullName, @GPA, @CourseID)"
                     UpdateCommand="UPDATE [Student] SET [FullName] = @FullName, [GPA] = @GPA, [CourseID] = @CourseID WHERE [Id] = @Id">

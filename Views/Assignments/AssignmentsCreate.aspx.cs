@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,9 @@ namespace TeacherPortalProject.Views.Assignments
 {
     public partial class AssignmentsCreate : System.Web.UI.Page
     {
+        private SqlConnection con = new SqlConnection(
+                "Data Source=.\\SQLEXPRESS;Initial Catalog=TeacherPortal;Integrated Security=True");
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,9 +28,6 @@ namespace TeacherPortalProject.Views.Assignments
 
             String insertAssignment = "INSERT INTO Assignment (Name, Grade, CourseID, StudentID) VALUES (@Name, @Grade, " +
                 "(SELECT Id FROM Course WHERE Id = @CourseID), (SELECT Id FROM Student WHERE Id = @StudentID))";
-
-            SqlConnection con = new SqlConnection(
-                "Data Source=.\\SQLEXPRESS;Initial Catalog=TeacherPortal;Integrated Security=True");
 
             try
             {

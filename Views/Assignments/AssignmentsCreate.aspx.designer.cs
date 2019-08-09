@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeacherPortalProject.Views.Assignments
-{
-
-
-    public partial class AssignmentsCreate
-    {
-
+namespace TeacherPortalProject.Views.Assignments {
+    
+    
+    public partial class AssignmentsCreate {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// txtStudentName control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
-
+        
         /// <summary>
         /// txtGrade control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGrade;
-
+        
         /// <summary>
         /// ddlCourses control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCourses;
-
+        
         /// <summary>
         /// CoursesList control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource CoursesList;
-
+        
         /// <summary>
         /// ddlStudents control.
         /// </summary>
@@ -67,16 +65,16 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlStudents;
-
+        
         /// <summary>
-        /// StudentList control.
+        /// StudentsList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource StudentList;
-
+        protected global::System.Web.UI.WebControls.SqlDataSource StudentsList;
+        
         /// <summary>
         /// btnCreate control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace TeacherPortalProject.Views.Assignments
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreate;
-
+        
         /// <summary>
         /// btnCancel control.
         /// </summary>

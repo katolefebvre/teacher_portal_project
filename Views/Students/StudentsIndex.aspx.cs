@@ -27,10 +27,9 @@ namespace TeacherPortalProject.Views.Students
             student.ID = Convert.ToInt32(gridStudent.SelectedRow.Cells[0].Text);
             student.FullName = gridStudent.SelectedRow.Cells[1].Text;
             student.GPA = Convert.ToDecimal(gridStudent.SelectedRow.Cells[2].Text);
-            int courseID = Convert.ToInt32(gridStudent.SelectedRow.Cells[3].Text);
-            string courseName = "";
+            string course = gridStudent.SelectedRow.Cells[3].Text;
 
-            SqlConnection con = new SqlConnection(
+            /*SqlConnection con = new SqlConnection(
                 "Data Source=.\\SQLEXPRESS;Initial Catalog=TeacherPortal;Integrated Security=True");
 
             try
@@ -48,21 +47,12 @@ namespace TeacherPortalProject.Views.Students
             finally
             {
                 con.Close();
-            }
+            }*/
 
             outID.Text = "<b>Student ID: </b>" + student.ID.ToString();
             outName.Text = "<b>Student Name: </b>" + student.FullName;
             outGPA.Text = "<b>GPA: </b>" + student.GPA.ToString();
-            outCourseName.Text = "<b>Course Name: </b>" + courseName;
-        }
-
-        protected void gridStudent_onRowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onmouseover"] = "onMouseOver('" + (e.Row.RowIndex + 1) + "')";
-                e.Row.Attributes["onmouseout"] = "onMouseOut('" + (e.Row.RowIndex + 1) + "')";
-            }
+            outCourseName.Text = "<b>Course Name: </b>" + course;
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssignmentsCreate.aspx.cs" Inherits="TeacherPortalProject.Views.Assignments.AssignmentsCreate" %>
+﻿<%@ Page
+    Language="C#"
+    AutoEventWireup="true"
+    CodeBehind="AssignmentsCreate.aspx.cs"
+    Inherits="TeacherPortalProject.Views.Assignments.AssignmentsCreate" %>
 
 <!DOCTYPE html>
 
@@ -17,6 +21,7 @@
 
         .auto-style3 {
             width: 294px;
+            margin-top: 5px;
         }
 
         .auto-style4 {
@@ -39,7 +44,8 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button
+                        type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -64,35 +70,96 @@
                 <tr>
                     <th class="auto-style1">Assignment Name:</th>
                     <td class="auto-style3">
-                        <asp:TextBox ID="txtStudentName" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
+                        <asp:TextBox
+                            ID="txtStudentName"
+                            runat="server"
+                            CssClass="auto-style2"
+                            Width="265px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <th class="auto-style5">Grade (%):</th>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtGrade" runat="server" CssClass="auto-style2" Width="265px"></asp:TextBox>
+                        <asp:TextBox
+                            ID="txtGrade"
+                            runat="server"
+                            CssClass="auto-style2"
+                            Width="265px">
+                        </asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <th class="auto-style1">Course:</th>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlCourses" runat="server" CssClass="auto-style2" DataSourceID="CoursesList" DataTextField="Name" DataValueField="Id" Width="276px" Height="25px">
+                        <asp:DropDownList
+                            ID="ddlCourses"
+                            runat="server"
+                            CssClass="auto-style2"
+                            DataSourceID="CoursesList"
+                            DataTextField="Name"
+                            DataValueField="Id"
+                            Width="275px"
+                            Height="25px" AutoPostBack="True">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="CoursesList" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+                        <asp:SqlDataSource
+                            ID="CoursesList"
+                            runat="server"
+                            ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>"
+                            SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
                     </td>
                 </tr>
                 <tr>
-                    <th>Student:</th>
-                    <td>
-                        <asp:DropDownList ID="ddlStudents" runat="server" DataSourceID="StudentList" DataTextField="FullName" DataValueField="Id" Width="276px" Height="25px" CssClass="auto-style2">
+                    <th class="auto-style1">Student:</th>
+                    <td class="auto-style3">
+                        <asp:DropDownList
+                            ID="ddlStudents"
+                            runat="server"
+                            AutoPostBack="True"
+                            DataSourceID="StudentsList"
+                            DataTextField="FullName"
+                            DataValueField="Id"
+                            Width="275px"
+                            Height="25px"
+                            CssClass="auto-style2">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="StudentList" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT [Id], [FullName], [CourseID] FROM [Student]"></asp:SqlDataSource>
+                        <asp:SqlDataSource
+                            ID="StudentsList"
+                            runat="server"
+                            ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>"
+                            SelectCommand="SELECT [Id], [FullName] FROM [Student] WHERE ([CourseID] = @CourseID)">
+                            <SelectParameters>
+                                <asp:ControlParameter
+                                    ControlID="ddlCourses"
+                                    Name="CourseID"
+                                    PropertyName="SelectedValue"
+                                    Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Assignment" Height="40px" Width="160px" CssClass="auto-style2" />
-            <asp:Button ID="btnCancel" runat="server" CssClass="auto-style2" Height="40px" Text="Cancel" Width="160px" OnClick="btnCancel_Click" />
+            <asp:Button
+                ID="btnCreate"
+                runat="server"
+                OnClick="btnCreate_Click"
+                Text="Create New Assignment"
+                Height="40px"
+                Width="180px"
+                CssClass="auto-style2" />
+            <asp:Button
+                ID="btnCancel"
+                runat="server"
+                CssClass="auto-style2"
+                Height="40px"
+                Text="Cancel"
+                Width="180px"
+                OnClick="btnCancel_Click" />
         </div>
     </form>
+    <footer style="text-align: center">
+        Kato Lefebvre - 991 323 245
+        <br />
+        George Zhou - [STUDENT NUMBER]
+    </footer>
 </body>
 </html>
