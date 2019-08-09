@@ -178,5 +178,13 @@
             </div>
         </div>
     </form>
+    <footer style="text-align: center">
+        <p>&copy; <%: DateTime.Now.Year %> - The Ultimate Teacher Portal</p>
+        <p>
+            Kato Lefebvre - 991 323 245
+        <br />
+            Wei Yang Zhou - 991 491 750
+        </p>
+    </footer>
 </body>
 </html>

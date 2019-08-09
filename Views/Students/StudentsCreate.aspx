@@ -71,10 +71,36 @@
                     </td>
                 </tr>
             </table>
-            <asp:SqlDataSource ID="Courses" runat="server" ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
-            <asp:Button ID="btnCreate" runat="server" OnClick="btnCreate_Click" Text="Create New Student" Height="40px" Width="160px" CssClass="auto-style2" />
-            <asp:Button ID="btnCancel" runat="server" CssClass="auto-style2" Height="40px" Text="Cancel" Width="160px" OnClick="btnCancel_Click" />
+            <asp:SqlDataSource
+                ID="Courses"
+                runat="server"
+                ConnectionString="<%$ ConnectionStrings:TeacherPortalConnectionString %>"
+                SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+            <asp:Button
+                ID="btnCreate"
+                runat="server"
+                OnClick="btnCreate_Click"
+                Text="Create New Student"
+                Height="40px"
+                Width="160px"
+                CssClass="auto-style2" />
+            <asp:Button
+                ID="btnCancel"
+                runat="server"
+                CssClass="auto-style2"
+                Height="40px"
+                Text="Cancel"
+                Width="160px"
+                OnClick="btnCancel_Click" />
         </div>
     </form>
+    <footer style="text-align: center">
+        <p>&copy; <%: DateTime.Now.Year %> - The Ultimate Teacher Portal</p>
+        <p>
+            Kato Lefebvre - 991 323 245
+        <br />
+            Wei Yang Zhou - 991 491 750
+        </p>
+    </footer>
 </body>
 </html>

@@ -54,14 +54,31 @@
                 <tr>
                     <th class="auto-style1">Course Name:</th>
                     <td class="auto-style3">
-
-                        <asp:TextBox ID="txtCourseName" runat="server" Width="235px" CssClass="auto-style2"></asp:TextBox>
-
+                        <asp:TextBox
+                            ID="txtCourseName"
+                            runat="server"
+                            Width="235px"
+                            CssClass="auto-style2"></asp:TextBox>
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="btnCreateC" runat="server" OnClick="btnCreateC_Click" Text="Create New Course" Height="39px" Width="256px" CssClass="auto-style2" />
+            <asp:Button
+                ID="btnCreateC"
+                runat="server"
+                OnClick="btnCreateC_Click"
+                Text="Create New Course"
+                Height="39px"
+                Width="256px"
+                CssClass="auto-style2" />
         </div>
     </form>
+    <footer style="text-align: center">
+        <p>&copy; <%: DateTime.Now.Year %> - The Ultimate Teacher Portal</p>
+        <p>
+            Kato Lefebvre - 991 323 245
+        <br />
+            Wei Yang Zhou - 991 491 750
+        </p>
+    </footer>
 </body>
 </html>
